@@ -22,9 +22,31 @@ games_data = [
 games_data.each do |game_data|
   Game.create!(
     name: game_data[:name],
-    release_date: game_data[:release_date],
+    release_date: Date.parse(game_data[:release_date]),
     genre: game_data[:genre],
     platform: game_data[:platform]
+  )
+
+end
+
+product_data = [
+  { name: "iPhone 15", price: 1200.00, description: "The latest flagship smartphone from Apple with advanced features and technology." },
+  { name: "PC", price: 800.00, description: "A powerful personal computer for gaming, work, and entertainment." },
+  { name: "PS5", price: 500.00, description: "Next-generation gaming console from Sony, offering high-performance gaming and entertainment." },
+  { name: "Xbox Series X", price: 500.00, description: "Microsoft's flagship gaming console with cutting-edge hardware and features." },
+  { name: "iPad", price: 600.00, description: "Apple's popular tablet device, perfect for productivity, creativity, and entertainment." },
+  { name: "Sony XM5", price: 300.00, description: "High-quality wireless headphones with noise-cancelling technology from Sony." },
+  { name: "Xbox Controller", price: 60.00, description: "Official wireless controller for Xbox gaming consoles, designed for comfort and precision." },
+  { name: "Nintendo Switch", price: 300.00, description: "Versatile gaming console from Nintendo that can be used as a handheld or connected to a TV." },
+  { name: "Valve Index", price: 1000.00, description: "Premium virtual reality headset with advanced features for immersive gaming experiences." },
+  { name: "Steam Deck", price: 400.00, description: "Portable gaming device from Valve, designed to run PC games on the go." }
+]
+
+product_data.each do |product|
+  Product.create!(
+    name: product[:name],
+    price: product[:price],
+    description: product[:description]
   )
 
 end
