@@ -8,11 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        <% @products.each do |Product|%>
+        <% @products.each do |product|%>
             <tr>
                 <td><%= product.name %></td>
                 <td>$<%= product.price %></td>
-                <td><%= link_to "Show Details", product_path(product) %></td>
+          
             </tr>
         <% end %>
     </tbody>
