@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: redirect('/products')
 
   get 'products', to: 'products#index', as: 'products'
+  get 'products/:id', to: 'products#show', as: 'product'
 
 
 
